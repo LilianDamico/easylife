@@ -1,22 +1,21 @@
+// navigation/AppNavigator.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/HomeScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import RecipesScreen from './src/screens/RecipesScreen';
-import CalorieTracker from './src/screens/CalorieTracker';
-import WaterTracker from './src/screens/WaterTrack';
-import MedicationScreen from './src/screens/MadicationScreen';
-import RemindersScreen from './src/screens/RemindersScreen';
+import HomeScreen from '../screens/HomeScreen';
+import RecipesScreen from '../screens/RecipesScreen';
+import CalorieTracker from '../screens/CalorieTracker';
+import WaterTracker from '../screens/WaterTracker';
+import MedicationScreen from '../screens/MedicationScreen';
+import RemindersScreen from '../screens/RemindersScreen';
 
 const Stack = createNativeStackNavigator();
 
-const App: React.FC = () => {
+const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Recipes" component={RecipesScreen} />
         <Stack.Screen name="CalorieTracker" component={CalorieTracker} />
         <Stack.Screen name="WaterTracker" component={WaterTracker} />
@@ -27,5 +26,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
-
+export default AppNavigator;
